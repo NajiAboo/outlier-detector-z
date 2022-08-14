@@ -1,13 +1,17 @@
 from setuptools import setup,find_packages
 from typing import List
+import os
 
+CWD = os.getcwd()
 #Declaring variables for setup functions
 PROJECT_NAME="outlier-detector-z"
 VERSION="0.0.1"
 AUTHOR="Mohamed Naji Aboo"
 DESRCIPTION="Application is used to detect the outliers in a list or tuple"
 
-REQUIREMENT_FILE_NAME="requirements.txt"
+REQUIREMENT_FILE_NAME= os.path.join(CWD, "requirements.txt")
+                       
+ 
 
 HYPHEN_E_DOT = "-e ."
 
