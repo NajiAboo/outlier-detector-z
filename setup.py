@@ -5,7 +5,7 @@ import os
 CWD = os.getcwd()
 #Declaring variables for setup functions
 PROJECT_NAME="outlier-detector-z"
-VERSION="0.0.1"
+VERSION="0.1.1"
 AUTHOR="Mohamed Naji Aboo"
 DESRCIPTION="Application is used to detect the outliers in a list or tuple"
 
@@ -30,6 +30,9 @@ def get_requirements_list() -> List[str]:
             requirement_list.remove(HYPHEN_E_DOT)
         return requirement_list
 
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 
 setup(
@@ -38,5 +41,7 @@ version=VERSION,
 author=AUTHOR,
 description=DESRCIPTION,
 packages=find_packages(), 
-install_requires=get_requirements_list()
+install_requires= ["numpy"],
+long_description=long_description,
+long_description_content_type="text/markdown",
 )
